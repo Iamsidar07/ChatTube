@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import axios from "axios";
 import { Message } from "./Message";
 import { useToast } from "./ui/use-toast";
+import { getVideoId } from "@/lib/video";
 
 interface MessageFieldProps {
   messages: Message[];
@@ -19,7 +20,7 @@ interface QueryVideo {
 
 const queryVideo = async (data: QueryVideo) => {
   const apiKey = localStorage.getItem("apiKey");
-  const res = await axios.post(import.meta.env.VITE_ENDPOINT!, data, {
+  const res = await axios.post(`${import.meta.env.VITE_ENDPOINT}/api/queryVideo`, data, {
     headers: {
       Authorization: apiKey,
     },
@@ -27,16 +28,7 @@ const queryVideo = async (data: QueryVideo) => {
   return res.data;
 };
 
-export const getVideoId = async () => {
-  const [tab] = await chrome.tabs.query({
-    active: true,
-    currentWindow: true,
-  });
-  const url = new URL(tab.url!);
-  const searchParams = url.searchParams;
-  const videoId = searchParams.get("v");
-  return videoId;
-};
+
 
 const MessageField = ({ messages, setMessages }: MessageFieldProps) => {
   const { toast } = useToast();
