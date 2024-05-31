@@ -1,0 +1,42 @@
+{
+  "name": "you-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc && node dist/server.js"
+  },
+  "keywords": [],
+  "author": "Manoj Kumar<ms8460149@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@datastax/astra-db-ts": "^0.1.4",
+    "@langchain/community": "^0.0.45",
+    "@langchain/core": "^0.1.55",
+    "@langchain/openai": "^0.0.28",
+    "@octoai/client": "^0.5.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http-errors": "^2.0.0",
+    "langchain": "^0.1.32",
+    "node-html-parser": "^6.1.13",
+    "openai": "^4.36.0",
+    "youtube-transcript": "github:sinedied/youtube-transcript#a10a073ac325b3b88018f321fa1bc5d62fa69b1c",
+    "youtubei.js": "^5.0.0",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/http-errors": "^2.0.4",
+    "@types/node": "^20.12.6",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.6.0"
+  }
+}
